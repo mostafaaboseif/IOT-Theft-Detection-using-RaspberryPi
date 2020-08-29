@@ -3,7 +3,6 @@
 
 # # Face Recognition
 # 
-# In this assignment, you will build a face recognition system. Many of the ideas presented here are from [FaceNet](https://arxiv.org/pdf/1503.03832.pdf). In lecture, we also talked about [DeepFace](https://research.fb.com/wp-content/uploads/2016/11/deepface-closing-the-gap-to-human-level-performance-in-face-verification.pdf). 
 # 
 # Face recognition problems commonly fall into two categories: 
 # 
@@ -12,35 +11,20 @@
 # 
 # FaceNet learns a neural network that encodes a face image into a vector of 128 numbers. By comparing two such vectors, you can then determine if two pictures are of the same person.
 #     
-# **In this assignment, you will:**
+# **In this module, we will:**
 # - Implement the triplet loss function
 # - Use a pretrained model to map face images into 128-dimensional encodings
 # - Use these encodings to perform face verification and face recognition
 # 
 # #### Channels-first notation
 # 
-# * In this exercise, we will be using a pre-trained model which represents ConvNet activations using a **"channels first"** convention, as opposed to the "channels last" convention used in lecture and previous programming assignments. 
+# * In this code, we will be using a pre-trained model which represents ConvNet activations using a **"channels first"** convention, as opposed to the "channels last" convention used in lecture and previous programming assignments. 
 # * In other words, a batch of images will be of shape $(m, n_C, n_H, n_W)$ instead of $(m, n_H, n_W, n_C)$. 
 # * Both of these conventions have a reasonable amount of traction among open-source implementations; there isn't a uniform standard yet within the deep learning community. 
 
 # ## <font color='darkblue'>Updates</font>
 # 
-# #### If you were working on the notebook before this update...
-# * The current notebook is version "3a".
-# * You can find your original work saved in the notebook with the previous version name ("v3") 
-# * To view the file directory, go to the menu "File->Open", and this will open a new tab that shows the file directory.
-# 
-# #### List of updates
-# * `triplet_loss`: Additional Hints added.
-# * `verify`: Hints added.
-# * `who_is_it`: corrected hints given in the comments.
-# * Spelling and formatting updates for easier reading.
-# 
 
-# #### Load packages
-# Let's load the required packages. 
-
-# In[1]:
 
 from keras.models import Sequential
 from keras.layers import Conv2D, ZeroPadding2D, Activation, Input, concatenate
