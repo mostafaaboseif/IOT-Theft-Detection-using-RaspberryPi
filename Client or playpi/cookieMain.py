@@ -4,7 +4,8 @@ from datetime import datetime
 from subprocess import call
 
 motionState = False
-picPath = "/home/pi/Desktop/cookie/images/"
+picPath = "/var/www/html/"
+picName = "ay7aga3.jpeg"
 
 def captureImage(currentTime, picPath):
     # Generate the picture's name
@@ -37,6 +38,6 @@ while True:
     print(motionState)
     if motionState:
         currentTime = getTime()
-        picName = captureImage(currentTime, picPath)
+        captureImage(currentTime, picPath)
         timeStamp(currentTime, picPath, picName)
         
