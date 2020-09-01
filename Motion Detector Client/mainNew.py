@@ -43,13 +43,13 @@ while True:
     motionState = motionDetector.motion()
     print(motionState)
     if motionState:
-	sleep(1)
+	    sleep(1)
         currentTime = getTime()
         captureImage(currentTime, picPath)
         timeStamp(currentTime, picPath, picName)
-	response = sendPicture.sendPic(s, picPath + picName)
-	print(response)
-	while True:
-	    pass
+        response = sendPicture.sendPic(s, picPath + picName)
+        print(response)
+        while True:
+            pass
 
 

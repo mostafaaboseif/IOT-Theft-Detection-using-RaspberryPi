@@ -44,7 +44,6 @@ def transmit(message):
 
 def backup(filePath):
     s = setupSocket()
-    #s.send(str.encode("sndsry"))
     response = sendPic(s, filePath)
     return response
 
